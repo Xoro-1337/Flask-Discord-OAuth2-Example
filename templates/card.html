@@ -1,0 +1,32 @@
+<div class="user-card">
+    <div class="header-banner mw-100">
+        {% if session['user_banner'] %}
+            <img src="{{ banner }}" width="300" alt="">
+        {% endif %}
+    </div>
+    <div class="header-top">
+        <div class="header-avatar">
+            <img src="{{ avatar }}" height="94" alt=""/>
+        </div>
+        <div class="header-text">
+            <span class="header-username">{{ session['username'] }}</span>
+        </div>
+        <p class="text-muted"><small>{{ session['email'] }}</small></p>
+        <div class="header-badges">
+            {% for badge in badges %}
+                <img src="{{ url_for('static', filename='img/badges/' + badge + '.svg') }}" height="22" alt=""/>
+            {% endfor %}
+            {% if session['user_premium'] > 0 %}
+                <img src="{{ url_for('static', filename='img/badges/nitro.svg') }}" height="22" alt=""/>
+            {% endif %}
+            {% if session['user_premium'] > 1 %}
+                <img src="{{ url_for('static', filename='img/badges/boost.svg') }}" height="22" alt=""/>
+            {% endif %}
+        </div>
+    </div>
+    <div class="body-wrapper">
+        <div class="body">
+            <a class="btn btn-lg btn-danger btn-block" href="{{ url_for('logout') }}">LOG OUT</a>
+        </div>
+    </div>
+</div>

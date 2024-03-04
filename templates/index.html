@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Flask Discord OAuth2 Example
+{% endblock %}
+
+{% block content %}
+    <main class="p-0 base">
+        <a class="btn-lg btn-discord btn-block" href="{{ url_for('login') }}">LOG IN</a>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}
