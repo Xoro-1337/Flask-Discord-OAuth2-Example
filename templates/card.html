@@ -11,7 +11,6 @@
         <div class="header-text">
             <span class="header-username">{{ session['username'] }}</span>
         </div>
-        <p class="text-muted"><small>{{ session['email'] }}</small></p>
         <div class="header-badges">
             {% for badge in badges %}
                 <img src="{{ url_for('static', filename='img/badges/' + badge + '.svg') }}" height="22" alt=""/>
