@@ -79,7 +79,6 @@ class DiscordOAuth:
                        'Authorization': f"Bearer {session['access_token']}"}
             response = requests.get(get_user_url, headers=headers)
             results = response.json()
-            print(results)
             user_info = {
                 'username': results['username'],
                 'user_id': results['id'],
